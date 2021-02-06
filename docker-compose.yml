@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+  job-listings:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4000:8080"
+    depends_on:
+      - database
+    networks:
+      - mysql-api
+    restart: unless-stopped
+    environment:
+      MYSQL_CONNECTION: mysql_user:mysql_password@tcp(database)/golang_jobs
+
+  database:
+    image: 'mysql'
+    networks:
+      - mysql-api
+    volumes:
+      - mysql-volume:/var/lib/mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql_rootpassword
+      MYSQL_DATABASE: golang_jobs
+      MYSQL_USER: mysql_user
+      MYSQL_PASSWORD: mysql_password
+
+volumes:
+  mysql-volume:
+networks:
+  mysql-api:

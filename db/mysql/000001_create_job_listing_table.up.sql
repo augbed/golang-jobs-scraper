@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS job_listings(
+    id INT NOT NULL UNIQUE AUTO_INCREMENT,
+    title VARCHAR (512) NOT NULL,
+    company VARCHAR (512) NOT NULL,
+    website VARCHAR (512) NOT NULL,
+    listing_Link VARCHAR (512) NOT NULL,
+    PRIMARY KEY (ID)
+)

@@ -1,0 +1,14 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+type Query {
+  jobListings: [JobListing!]!
+}
+
+type JobListing {
+  id: ID!
+  company: String!
+  title: String!
+  website: String!
+  listingLink: String!
+}
