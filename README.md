@@ -1,5 +1,5 @@
 # Golang job listing scraper
-This is a program to scrape couple websites (golang.cafe, ) for golang job listings, persist them to mysql and serve them trough graphql endpoint.
+This is a program to scrape couple websites (golang.cafe, remoteok.io, welovegolang.com) for golang job listings, persist them to mysql and serve them trough graphql endpoint.
 
 ## Requirements
 Docker and docker-compose
